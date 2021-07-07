@@ -116,6 +116,52 @@ vm.swappiness=40
 
 ![image](https://user-images.githubusercontent.com/75664650/124748776-24e83c80-df41-11eb-93cd-67ecd48fd316.png)
 
+## FTP
+
+### Configuring and setting up the proftpd FTP server
+
+###### Installing proftpd
+
+```
+sudo apt-get install -y proftpd
+```
+###### Configuring Server name. I went ahead and editted the ServerName field in the /etc/proftpd/proftpd.conf file.
+
+### Creating user proftpuser
+
+###### Switch to root by typing ```sudo su -``` and execute the following :
+
+```
+sudo echo "/bin/false" >> /etc/shells
+```
+
+###### Then run the following to create the user and set the password :
+
+```
+sudo useradd -m -s /bin/false proftpuser
+sudo passwd proftpuser
+```
+###### After running the above you can exit root by typing ```exit```
+
+### Seting the proftpd process priority ( Nice value) as -5
+
+```
+renice -n -5 -p $(pgrep ^proftpd$)
+```
+
+### Assigning the I/O priority of Constant to the proftpd process
+
+```
+ionice -c 2 -n 0 proftpd
+```
+
+### Screenshots
+
+###### proftpd config file has been uploaded to the config files folder
+
+###### Screenshot of top
+
+![top](https://user-images.githubusercontent.com/75664650/124750336-f5d2ca80-df42-11eb-9a0f-6bf875a2e7d6.png)
 
 
 
