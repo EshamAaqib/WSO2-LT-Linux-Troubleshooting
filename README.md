@@ -51,3 +51,13 @@ ethtool -G ens33 rx 4096
 
 ![image](https://user-images.githubusercontent.com/75664650/124746796-e3569200-df3e-11eb-8e75-5813d1a240db.png)
 
+###### Screenshot of ulimit -Sa
+
+![image](https://user-images.githubusercontent.com/75664650/124746895-04b77e00-df3f-11eb-81b3-991a583c0db7.png)
+
+###### Screenshot of  /etc/security/limits.conf
+
+![image](https://user-images.githubusercontent.com/75664650/124746985-1a2ca800-df3f-11eb-9e8d-2be91ecc860f.png)
+
+
+
