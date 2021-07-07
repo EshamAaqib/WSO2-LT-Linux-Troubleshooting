@@ -178,6 +178,8 @@ sudo apt-get install squid
 
 ```
 http_access allow all
+acl all src 0.0.0.0/0
+
 ```
 
 ###### b. Browser configuration can be done by accessing the proxy settings in the browser and enter the proxy server address as ```127.0.0.1``` and the port as ```3128```
