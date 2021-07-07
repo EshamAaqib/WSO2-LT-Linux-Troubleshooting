@@ -59,5 +59,51 @@ ethtool -G ens33 rx 4096
 
 ![image](https://user-images.githubusercontent.com/75664650/124746985-1a2ca800-df3f-11eb-9e8d-2be91ecc860f.png)
 
+## SWAP
+
+### Creating Two swap files with size of 100MB and 200MB
+
+```
+dd if=/dev/zero of=/swap bs=100M count=1
+dd if=/dev/zero of=/swap1 bs=200M count=1 
+mkswap /swap
+mkswap /swap1 
+swapon /swap
+swapon /swap1
+```
+
+### Assigning 200MB swap file a priority 10 and 100MB swap file a priority 20
+
+```
+swapoff /swap
+swapon -p 20 /swap
+swapoff /swap1
+swapon -p 10 /swap1
+```
+
+### Configuring swap files to mount during a boot
+
+###### In this step I went ahead and added these two lines to the end of the /etc/fstab file. Use ```sudo nano /etc/fstab``` to edit it.
+
+```
+/swapfile swap swap pri=20 20 20
+/swapfile1 swap swap pri=10 10 10
+```
+
+### Changing the system swappiness value to 40
+
+```
+sudo sysctl vm.swappiness=40
+```
+
+###### To make the swappiness persistent across reboots I went ahead and added the following to the /etc/sysctl.conf file.
+
+```
+vm.swappiness=40
+```
+
+### Screenshots
+
+
 
 
