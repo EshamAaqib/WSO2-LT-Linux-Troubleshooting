@@ -104,6 +104,19 @@ vm.swappiness=40
 
 ### Screenshots
 
+###### Screenshot of /etc/fstab
+
+![image](https://user-images.githubusercontent.com/75664650/124748634-fc604280-df40-11eb-85e7-915d5be8497a.png)
+
+###### Screenshot of Free -m
+
+![image](https://user-images.githubusercontent.com/75664650/124748712-126e0300-df41-11eb-86e1-3a7e2331247e.png)
+
+###### Screenshot of Swapon -s
+
+![image](https://user-images.githubusercontent.com/75664650/124748776-24e83c80-df41-11eb-93cd-67ecd48fd316.png)
+
+
 
 
 
