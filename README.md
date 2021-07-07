@@ -157,7 +157,7 @@ ionice -c 2 -n 0 proftpd
 
 ### Screenshots
 
-###### proftpd config file has been uploaded to the config files folder
+###### proftpd config file has been uploaded to the config files folder (Link at the bottom of the file)
 
 ###### Screenshot of top
 
@@ -220,7 +220,7 @@ sudo ln -s /etc/init.d/squid /etc/rc5.d/S01squid
 
 ###### Thats it now  squid will start during the boot in only in 1,3,5 run levels
 
-### Squid config file has been uploaded to the config files folder
+### Squid config file has been uploaded to the config files folder (Link at the bottom of the file)
 
 ## This whole assignment was written on a Github private repository and the config files can be accessed via  :  https://gitfront.io/r/eshamaaqib/99838800984141d99c78971e5a2f28ba0d1cbb63/WSO2-Linux-Troubleshooting-Assignment/
 
