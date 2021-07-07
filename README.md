@@ -45,5 +45,9 @@ ethtool -g ens33
 ethtool -G ens33 rx 4096 
 ```
 
+### 6. Screenshots
 
+###### Screenshot of ulimit -Ha
+
+![Alt text](/screenshots/Ulimit -Ha.png?raw=true "Optional Title")
 
