@@ -163,6 +163,63 @@ ionice -c 2 -n 0 proftpd
 
 ![top](https://user-images.githubusercontent.com/75664650/124750336-f5d2ca80-df42-11eb-9a0f-6bf875a2e7d6.png)
 
+## SQUID PROXY
 
+### Seting up and configuring the Squid proxy server
+
+###### Installing squid
+```
+sudo apt-get install squid
+```
+
+###### a. Allowing HTTP traffic via squid proxy
+
+###### Go ahead and modify the /etc/squid/squid.conf file. Add the following before the ```http_access deny all``` line. After modifying execute ```sudo systemctl restart squid```
+
+```
+http_access allow all
+```
+
+###### b. Browser configuration can be done by accessing the proxy settings in the browser and enter the proxy server address as ```127.0.0.1``` and the port as ```3128```
+
+###### c. Configuring Squid proxy to block Domains
+
+###### First I went ahead created a file with the domains needed to be blocked in it. I went ahead and executed ```sudo nano /etc/squid/blocked-sites.acl``` and added the following to the file.
+
+```
+.facebook.com
+.wso2.com
+.ubuntu.com
+```
+
+###### Then I went ahead and modified /etc/squid/squid.conf file and added the following before the ```http_access allow all``` we added previously. After modifying execute ```sudo systemctl restart squid```
+
+```
+acl blocked-sites dstdomain "/etc/squid/blocked-sites.acl"
+http_access deny all blocked-sites
+```
+
+###### d. Now we should Configure Squid proxy daemon so that it will start during the boot in only in 1,3,5 run levels
+
+###### First I went ahead and removed all the symlinks from run levels 1,2,3,4 and 5. I did so by executing.
+
+```
+sudo rm /etc/rc1.d/K01squid
+sudo rm /etc/rc2.d/S01squid
+sudo rm /etc/rc3.d/S01squid
+sudo rm /etc/rc4.d/S01squid
+sudo rm /etc/rc5.d/S01squid
+```
+###### Then I went ahead and created symlinks for run levels 1,3 and 5 by executing the following
+
+```
+sudo ln -s /etc/init.d/squid /etc/rc1.d/S01squid
+sudo ln -s /etc/init.d/squid /etc/rc3.d/S01squid
+sudo ln -s /etc/init.d/squid /etc/rc5.d/S01squid
+```
+
+###### Thats it now  squid will start during the boot in only in 1,3,5 run levels
+
+### Squid config file has been uploaded to the config files folder
 
 
