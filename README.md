@@ -222,4 +222,5 @@ sudo ln -s /etc/init.d/squid /etc/rc5.d/S01squid
 
 ### Squid config file has been uploaded to the config files folder
 
+## This whole assignment was written on a Github private repository and the config files can be accessed via  :  https://gitfront.io/r/eshamaaqib/99838800984141d99c78971e5a2f28ba0d1cbb63/WSO2-Linux-Troubleshooting-Assignment/
 
