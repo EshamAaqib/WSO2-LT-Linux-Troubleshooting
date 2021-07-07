@@ -161,7 +161,7 @@ ionice -c 2 -n 0 proftpd
 
 ###### Screenshot of top
 
-![top](https://user-images.githubusercontent.com/75664650/124750336-f5d2ca80-df42-11eb-9a0f-6bf875a2e7d6.png)
+![top](https://user-images.githubusercontent.com/75664650/124782559-f3cc3400-df61-11eb-9a94-2e27d3807324.png)
 
 ## SQUID PROXY
 
