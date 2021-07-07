@@ -64,21 +64,21 @@ ethtool -G ens33 rx 4096
 ### Creating Two swap files with size of 100MB and 200MB
 
 ```
-dd if=/dev/zero of=/swap bs=100M count=1
-dd if=/dev/zero of=/swap1 bs=200M count=1 
-mkswap /swap
-mkswap /swap1 
-swapon /swap
-swapon /swap1
+dd if=/dev/zero of=/swapfile bs=100M count=1
+dd if=/dev/zero of=/swapfile1 bs=200M count=1 
+mkswap /swapfile
+mkswap /swapfile1 
+swapon /swapfile
+swapon /swapfile1
 ```
 
 ### Assigning 200MB swap file a priority 10 and 100MB swap file a priority 20
 
 ```
-swapoff /swap
-swapon -p 20 /swap
-swapoff /swap1
-swapon -p 10 /swap1
+swapoff /swapfile
+swapon -p 20 /swapfile
+swapoff /swapfile1
+swapon -p 10 /swapfile1
 ```
 
 ### Configuring swap files to mount during a boot
